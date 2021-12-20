@@ -9,12 +9,12 @@ router.get('/', async(req,res,next) => {
 });
 
 router.use('/users', authController);
-// router.get('/drivers', driversController);
-// router.get('/constructors', constructorsController);
-// router.get('/latest', latestNewsController);
-// router.get('/standings', standingsController);
-// router.get('/videos', videosController);
-// router.get('/schedule', scheduleController);
+// router.use('/drivers', driversController);
+// router.use('/constructors', constructorsController);
+// router.use('/latest', latestNewsController);
+// router.use('/standings', standingsController);
+// router.use('/videos', videosController);
+// router.use('/schedule', scheduleController);
 
 
 

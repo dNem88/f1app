@@ -1,10 +1,8 @@
 const authRouter = require('express').Router();
-const { login, register, logout } = require('../services/authServices');
+const { login, register, logout, validateReg, validateLogin } = require('../services/authServices');
 
-authRouter.post('/register', register);
-authRouter.post('/login', login);
+authRouter.post('/register', validateReg, register);
+authRouter.post('/login', validateLogin, login);
 authRouter.post('/logout', logout);
-
-
 
 module.exports = authRouter;
