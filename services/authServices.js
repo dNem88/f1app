@@ -1,20 +1,18 @@
 const authData = require('../data/authData');
 const bcrypt = require('bcrypt');
-const salt = require('../config/env').development.SALT;
-
-/*import validator to validate credentials
-import bcrypt to hash the password
-import jwt to send to the user
-set cookie 
-create db session*/
+const salt = process.env.SALT;
 const validator = require('validator');
+const jwt = require('jsonwebtoken');
+// import jwt to send to the user
+// set cookie 
+// create db session*/
+
 
 
 async function login(req,res,next) {
-    /*if the user is valid have to create session, jwt add to the user, send cookie, attach the session to the request.app.locals.session*/
-    
-    res.status(200).json({user: 'You logged in'});
-    console.log('login');
+    const token = generateToken(req.session.user); /*add user as a jwt payload*/
+    req.session.user.authToken = token;
+    res.status(200).json(req.session.user);
 };
 async function register(req, res, next) {
     const {username, password, email} = req.body;
@@ -41,15 +39,16 @@ async function register(req, res, next) {
         
     });
 };
-
 async function logout(req, res, next) {
-    res.status(200).send('logout');
-    console.log('logout');
+    req.session.destroy((err) => {
+        return err;
+    });
+    res.status(200).json({message: 'You successfully logout'});
 };
+
 
 function validateReg(req,res,next) {
     const {username, password, confirmPassword, email} = req.body;
-    console.log(req.body);
     const isValidUsername =  validator.isAlphanumeric(username);
     const isSecurePassword = validator.isStrongPassword(password, {
         minLength: 8,
@@ -89,16 +88,25 @@ async function validateLogin(req,res,next) {
     const {username, password} = req.body;
     
     const validUser = await authData.findUser(username, req); /*DB check for such user*/
-    console.log(validUser);
     if (!validUser) {
-        return res.status(400).json({error: "No such user!"});
+        return res.status(400).json({error: {message: "No such user!"}});
     } 
+    req.session.user = {
+        _id: validUser._id,
+        username: validUser.username,
+        email: validUser.email
+    };
     const passMatch = await bcrypt.compare(password, validUser.password);
     if (!passMatch) {
-        return res.status(400).json({error: "Password doesn't match!"});
+        return res.status(400).json({error: {message: "Password doesn't match!"}});
     }
     next();
 }
+
+function generateToken(user) {
+    return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '3h'});
+}
+
 module.exports = {
     login,
     register,

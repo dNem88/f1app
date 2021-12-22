@@ -1,8 +1,6 @@
 const mongodb = require('mongodb');
-const env = require('./env');
 
-
-const client = new mongodb.MongoClient(env.development.DB_URI, {
+const client = new mongodb.MongoClient(process.env.DB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
 });
@@ -17,5 +15,5 @@ module.exports = (app) => {
             app.locals.client = db;
             /*Keep a reference to the database in app.locals*/
         }
-    })
+    });
 };

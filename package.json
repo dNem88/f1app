@@ -23,6 +23,8 @@
   "homepage": "https://github.com/dNem88/f1app#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "connect-mongo": "^4.6.0",
+    "dotenv": "^10.0.0",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
