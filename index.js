@@ -7,7 +7,6 @@ require('dotenv').config({
 });
 const mongoStore = require('connect-mongo');
 const session = require('express-session');
-
 app.use(session({
     saveUninitialized: true,
     resave: false,
@@ -30,8 +29,6 @@ require('./config/database')(app);
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
 app.use(router);
-
-
 
 app.listen(process.env.PORT , console.log(`Server listens on port ${process.env.PORT}`));
 
