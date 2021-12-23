@@ -1,5 +1,6 @@
 
 
 module.exports = async(req,res,next) => {
-    res.status(200).json(req.session);
+    const data = req.query;
+    res.status(200).json(data);
 }

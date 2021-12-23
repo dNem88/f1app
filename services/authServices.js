@@ -3,10 +3,7 @@ const bcrypt = require('bcrypt');
 const salt = process.env.SALT;
 const validator = require('validator');
 const jwt = require('jsonwebtoken');
-// import jwt to send to the user
-// set cookie 
-// create db session*/
-
+const User = require('../models/user');
 
 
 async function login(req,res,next) {
@@ -22,11 +19,7 @@ async function register(req, res, next) {
         }
         if (encrypted) {
             try {
-                const user = await authData.registerUser(req, {
-                    username: username,
-                    password: encrypted,
-                    email: email
-                });
+                const user = await authData.registerUser(req, new User(username, encrypted, email));
                 res.status(200).json(user);
             } catch (e) {
                 res.status(400).json({
