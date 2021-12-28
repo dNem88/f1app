@@ -6,6 +6,18 @@ const cors = require('cors');
 require('dotenv').config({
     path: path.resolve(process.cwd(), 'config/.env')
 });
+
+
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+// app.use(cors({
+//     methods: ['GET', 'POST'],
+//     origin: "*",
+//     allowedHeaders: ['Authorization', 'Content-type']
+// }));
+app.use(router);
+require('./config/database')(app);
+
 const mongoStore = require('connect-mongo');
 const session = require('express-session');
 app.use(session({
@@ -23,16 +35,6 @@ app.use(session({
         httpOnly: true,
     }
 }));
-require('./config/database')(app); 
-
-app.use(express.urlencoded({extended: true}));
-app.use(express.json());
-app.use(cors({
-    methods: ['GET', 'POST'],
-    origin: "*",
-    allowedHeaders: ['Authorization', 'Content-type']
-}));
-app.use(router);
 
 app.listen(process.env.PORT , console.log(`Server listens on port ${process.env.PORT}`));
 

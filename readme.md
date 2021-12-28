@@ -34,6 +34,24 @@ main purpose is to supply frontend applications with F1 data.
 
 ### User authentication
 
+#### Register user
+
+* Request type/url
 ```
-some code here
+POST  http://localhost:3020/users/register
+
+body: { 
+    username: 'user1',
+    password: 'User458712',
+    confirmPassword: 'User458712'.
+    email: `user@email.com`
+}
 ```    
+* Response
+
+`
+{
+    "acknowledged":true,
+    "insertedId":"61cac725ee090162eabcfd18"
+}
+`
