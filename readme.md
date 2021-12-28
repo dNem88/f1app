@@ -90,3 +90,65 @@ body: {},  Body is not required
 `
 {"message":"You successfully logout"}
 `
+
+### RACES SCHEDULE
+
+* Request type/url
+```
+GET  http://localhost:3020/schedule
+
+```    
+* Response
+
+Array of Objects containing circuit information, date, location
+
+```
+[
+{
+    "_id": "someId",
+    "season": "2022",
+    "round": "3",
+    "Circuit": {
+      "circuitId": "albert_park",
+      "circuitName": "Albert Park Grand Prix Circuit",
+      "Location": {
+        "locality": "Melbourne",
+        "country": "Australia"
+      }
+    },
+    "date": "2022-04-10",
+    "time": "05:10:00Z"
+  }
+]
+```
+
+### RACES SCHEDULE
+
+* Request type/url
+```
+GET  http://localhost:3020/schedule/someId
+
+```    
+* Response
+
+circuit information, date, location
+
+```
+[
+{
+    "_id": "someId",
+    "season": "2022",
+    "round": "3",
+    "Circuit": {
+      "circuitId": "albert_park",
+      "circuitName": "Albert Park Grand Prix Circuit",
+      "Location": {
+        "locality": "Melbourne",
+        "country": "Australia"
+      }
+    },
+    "date": "2022-04-10",
+    "time": "05:10:00Z"
+  }
+]
+```
