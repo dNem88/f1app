@@ -55,3 +55,23 @@ body: {
     "insertedId":"61cac725ee090162eabcfd18"
 }
 `
+#### Login user
+
+* Request type/url
+```
+POST  http://localhost:3020/users/login
+
+body: { 
+    username: 'user1',
+    password: 'User458712',
+}
+```    
+* Response
+
+`
+{"_id":"someId",
+"username":"user1",
+"email":"user@gmail.com",
+"authToken":"eyJhbGciOiJdasdIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNhYzcyNWVlMDkwMTYydadsZWFiY2ZkMTgiLCJ1c2VybmFtZSI6ImRhbmluZW1za2kzNCIsImVtYWlsIjoiZGFuaWVsQGdtYWlsLmNvbSIsImlhdCI6MTY0MDY4MDM5OCwiZXhwIjoxNjQwNjkxMTk4fQ.0ZeTOHvky1wFmEVjT_vUuFZWSsVdddWGHW0seyHXexzvI"}
+`
+
