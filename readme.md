@@ -199,3 +199,68 @@ Array of CONSTRUCTORS objects
     }
 ]
 ```
+
+### DRIVERS
+
+* Request type/url
+```
+GET  http://localhost:3020/drivers
+
+```    
+* Response
+
+Array of DRIVERS objects
+
+```
+[
+{
+    "_id": "61cafa96e22e8aad9c021a3808",
+    "permanentNumber": "11",
+    "code": "PER",
+    "givenName": "Sergio",
+    "familyName": "Perez",
+    "dateOfBirth": "1990-26-01",
+    "country": "Mexico",
+    "team": "Red Bull Racing",
+    "stats": {
+        "gp": 214,
+        "champion": 0,
+        "podiums": 15,
+        "highestFinish": 1,
+        "wins": 2
+    }
+}
+]
+```
+
+### DRIVER INFORMATION
+
+* Request type/url
+```
+GET  http://localhost:3020/drivers/:id
+
+```    
+* Response
+
+Object
+
+```
+{
+    "_id": "61cafa96e22e8d9c021a38da08",
+    "permanentNumber": "11",
+    "code": "PER",
+    "givenName": "Sergio",
+    "familyName": "Perez",
+    "dateOfBirth": "1990-26-01",
+    "country": "Mexico",
+    "team": "Red Bull Racing",
+    "stats": {
+        "gp": 214,
+        "champion": 0,
+        "podiums": 15,
+        "highestFinish": 1,
+        "wins": 2
+    }
+}
+
+```
