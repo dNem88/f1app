@@ -122,7 +122,7 @@ Array of Objects containing circuit information, date, location
 ]
 ```
 
-### RACES SCHEDULE
+### RACE DATA
 
 * Request type/url
 ```
@@ -150,5 +150,51 @@ circuit information, date, location
     "date": "2022-04-10",
     "time": "05:10:00Z"
   }
+]
+```
+
+### DRIVERS CURRENT STANDINGS
+
+* Request type/url
+```
+GET  http://localhost:3020/standings/drivers
+
+```    
+* Response
+
+Array of Drivers objects
+
+```
+[
+    {
+    "position": "1",
+    "points": "395.5",
+    "wins": "10",
+    "driver": "Max Verstappen",
+    "nationality": "Dutch",
+    "team": "Red Bull"
+  }
+]
+```
+### CONSTRUCTORS CURRENT STANDINGS
+
+* Request type/url
+```
+GET  http://localhost:3020/standings/constructors
+
+```    
+* Response
+
+Array of CONSTRUCTORS objects
+
+```
+[
+    {
+        "position": "1",
+        "points": "613.5",
+        "wins": "9",
+        "constructor": "Mercedes",
+        "nationality": "German"
+    }
 ]
 ```
