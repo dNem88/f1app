@@ -10,9 +10,7 @@
 F1 APP
 
 # Description
-    The F1 app is a project made for learning purposes. It's for
-non-commercial use. It is created as a RESTful service, which
-main purpose is to supply frontend applications with F1 data.
+*  The F1 app is a project made for learning purposes. It's for non-commercial use. It is created as a RESTful service, which main purpose is to supply frontend applications with F1 data.
 
 # Technologies
     - NodeJS / Express
