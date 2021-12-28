@@ -32,9 +32,9 @@ main purpose is to supply frontend applications with F1 data.
 
 # Endpoints
 
-### User authentication
+## User authentication
 
-#### Register user
+### REGISTER USER
 
 * Request type/url
 ```
@@ -55,7 +55,7 @@ body: {
     "insertedId":"61cac725ee090162eabcfd18"
 }
 `
-#### Login user
+### LOGIN USER
 
 * Request type/url
 ```
@@ -72,6 +72,21 @@ body: {
 {"_id":"someId",
 "username":"user1",
 "email":"user@gmail.com",
-"authToken":"eyJhbGciOiJdasdIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWNhYzcyNWVlMDkwMTYydadsZWFiY2ZkMTgiLCJ1c2VybmFtZSI6ImRhbmluZW1za2kzNCIsImVtYWlsIjoiZGFuaWVsQGdtYWlsLmNvbSIsImlhdCI6MTY0MDY4MDM5OCwiZXhwIjoxNjQwNjkxMTk4fQ.0ZeTOHvky1wFmEVjT_vUuFZWSsVdddWGHW0seyHXexzvI"}
+"authToken":"token should be send with all requests
+in 'Authorization' HTTP Request-header"}
 `
 
+
+### LOGOUT USER
+
+* Request type/url
+```
+POST  http://localhost:3020/users/logout
+
+body: {},  Body is not required
+```    
+* Response
+
+`
+{"message":"You successfully logout"}
+`
