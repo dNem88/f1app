@@ -6,12 +6,12 @@ const scheduleController = require('./controllers/scheduleController');
 const standingsController = require('./controllers/standingsController');
 
 router.use('/users', authController);
-// router.use('/drivers', driversController);
-// router.use('/constructors', constructorsController);
-// router.use('/latest', latestNewsController);
 router.use('/standings', standingsController);
-// router.use('/videos', videosController);
 router.use('/schedule', scheduleController);
+// router.use('/drivers', driversController);
+// router.use('/teams', teamsController);
+// router.use('/latest', latestNewsController);
+// router.use('/videos', videosController);
 // router.use('/', isAuthenticated, homeController);
 router.use('/',  homeController);
 
