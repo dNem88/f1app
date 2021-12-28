@@ -10,28 +10,15 @@ require('dotenv').config({
 
 app.use(express.urlencoded({extended: true}));
 app.use(express.json());
-const mongoStore = require('connect-mongo');
-const session = require('express-session');
-app.use(session({
-    saveUninitialized: true,
-    resave: false,
-    secret: process.env.SECRET_KEY,
-    name: process.env.COOKIE_NAME,
-    store: mongoStore.create({
-        mongoUrl: process.env.DB_URI,
-        collectionName: 'sessions'
-    }),
-    cookie: {
-        path: '/',
-        maxAge: 10800000,
-        httpOnly: true,
-    }
-}));
+
+const session = require('./middlewares/session');
+app.use(session());
 app.use(cors({
     methods: ['GET', 'POST'],
     origin: "*",
     allowedHeaders: ['Authorization', 'Content-type']
 }));
+
 app.use(router);
 require('./config/database')(app);
 
