@@ -12,8 +12,8 @@ async function getDrivers(req, res, next) {
 
 async function getDriver(req, driverId) {
     try {
-        const drivers = req.app.locals.client.db('f1').collection('drivers').findOne({_id: ObjectId(driverId)});
-        return drivers;
+        const driver = req.app.locals.client.db('f1').collection('drivers').findOne({_id: ObjectId(driverId)});
+        return driver;
     } catch (e) {
         return {
             error: {
