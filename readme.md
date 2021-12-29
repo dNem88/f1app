@@ -262,3 +262,48 @@ Object
 }
 
 ```
+
+### TEAMS
+
+* Request type/url
+```
+GET  http://localhost:3020/teams
+
+```    
+* Response
+
+Array of TEAMS objects
+
+```
+[
+{
+    "_id": "61bf4834af11f51244cf9fcc",
+    "constructorId": "alpine",
+    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+    "name": "Alpine F1 Team",
+    "nationality": "French"
+  }
+]
+```
+
+### TEAM INFORMATION
+
+* Request type/url
+```
+GET  http://localhost:3020/teams/:id
+
+```    
+* Response
+
+Object
+
+```
+{
+    "_id": "61bf4834af11aadf51244cf9fcc",
+    "constructorId": "alpine",
+    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
+    "name": "Alpine F1 Team",
+    "nationality": "French"
+  }
+
+```
