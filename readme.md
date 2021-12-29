@@ -10,7 +10,7 @@
 F1 APP
 
 # Description
-*  The F1 app is a project made for learning purposes. It's for non-commercial use. It is created as a RESTful service, which main purpose is to supply frontend applications with F1 data.
+*  The F1 app is a project made for learning purposes. It's for non-commercial use. It is created as a RESTful service, which main purpose is to supply frontend application with F1 data. It does not support PUT, DELETE requests. 
 
 # Technologies
     - NodeJS / Express
@@ -22,6 +22,7 @@ F1 APP
     "connect-mongo": "^4.6.0",
     "cors": "^2.8.5",
     "dotenv": "^10.0.0",
+    "ejs": "^3.1.6",
     "express": "^4.17.2",
     "express-session": "^1.17.2",
     "jsonwebtoken": "^8.5.1",
@@ -276,13 +277,21 @@ Array of TEAMS objects
 
 ```
 [
-{
-    "_id": "61bf4834af11f51244cf9fcc",
-    "constructorId": "alpine",
-    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
-    "name": "Alpine F1 Team",
-    "nationality": "French"
-  }
+    {
+        "_id": "61cc2aa164e7999bae8c4b1885",
+        "name": "Mercedes-AMG Petronas F! Team",
+        "base": "Brackley, UK",
+        "teamChief": "Toto Wolf",
+        "technicalChief": "Mike Elliott",
+        "chasis": "W12",
+        "powerUnit": "Mercedes",
+        "firstTeamEntry": 1970,
+        "championships": 8,
+        "highestRaceFinnish": 1,
+        "wins": 115,
+        "poles": 127,
+        "fastestLaps": 85
+    }
 ]
 ```
 
@@ -299,11 +308,18 @@ Object
 
 ```
 {
-    "_id": "61bf4834af11aadf51244cf9fcc",
-    "constructorId": "alpine",
-    "url": "http://en.wikipedia.org/wiki/Alpine_F1_Team",
-    "name": "Alpine F1 Team",
-    "nationality": "French"
+    "_id": "61cc2164e7999badde8c4b1885",
+    "name": "Mercedes-AMG Petronas F! Team",
+    "base": "Brackley, UK",
+    "teamChief": "Toto Wolf",
+    "technicalChief": "Mike Elliott",
+    "chasis": "W12",
+    "powerUnit": "Mercedes",
+    "firstTeamEntry": 1970,
+    "championships": 8,
+    "highestRaceFinnish": 1,
+    "wins": 115,
+    "poles": 127,
+    "fastestLaps": 85
   }
-
 ```
