@@ -13,6 +13,6 @@ module.exports = (app) => {
         origin: "*",
         allowedHeaders: ['Authorization', 'Content-type']
     }));
-    app.set('views', '../views');
     app.set('view engine', 'ejs');
+    
 };
