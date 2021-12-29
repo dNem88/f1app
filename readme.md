@@ -37,7 +37,7 @@ F1 APP
 
 * Request type/url
 ```
-POST  http://localhost:3020/users/register
+POST  https://boiling-brushlands-51072.herokuapp.com/users/register
 
 body: { 
     username: 'user1',
@@ -58,7 +58,7 @@ body: {
 
 * Request type/url
 ```
-POST  http://localhost:3020/users/login
+POST  https://boiling-brushlands-51072.herokuapp.com/users/login
 
 body: { 
     username: 'user1',
@@ -80,7 +80,7 @@ in 'Authorization' HTTP Request-header"}
 
 * Request type/url
 ```
-POST  http://localhost:3020/users/logout
+POST  https://boiling-brushlands-51072.herokuapp.com/users/logout
 
 body: {},  Body is not required
 ```    
@@ -95,7 +95,7 @@ body: {},  Body is not required
 
 * Request type/url
 ```
-GET  http://localhost:3020/schedule
+GET  https://boiling-brushlands-51072.herokuapp.com/schedule
 
 ```    
 * Response
@@ -126,7 +126,7 @@ Array of Objects containing circuit information, date, location
 
 * Request type/url
 ```
-GET  http://localhost:3020/schedule/someId
+GET  https://boiling-brushlands-51072.herokuapp.com/schedule/someId
 
 ```    
 * Response
@@ -157,7 +157,7 @@ circuit information, date, location
 
 * Request type/url
 ```
-GET  http://localhost:3020/standings/drivers
+GET  https://boiling-brushlands-51072.herokuapp.com/standings/drivers
 
 ```    
 * Response
@@ -180,7 +180,7 @@ Array of Drivers objects
 
 * Request type/url
 ```
-GET  http://localhost:3020/standings/constructors
+GET  https://boiling-brushlands-51072.herokuapp.com/standings/constructors
 
 ```    
 * Response
@@ -203,7 +203,7 @@ Array of CONSTRUCTORS objects
 
 * Request type/url
 ```
-GET  http://localhost:3020/drivers
+GET  https://boiling-brushlands-51072.herokuapp.com/drivers
 
 ```    
 * Response
@@ -236,7 +236,7 @@ Array of DRIVERS objects
 
 * Request type/url
 ```
-GET  http://localhost:3020/drivers/:id
+GET  https://boiling-brushlands-51072.herokuapp.com/drivers/:id
 
 ```    
 * Response
@@ -268,7 +268,7 @@ Object
 
 * Request type/url
 ```
-GET  http://localhost:3020/teams
+GET  https://boiling-brushlands-51072.herokuapp.com/teams
 
 ```    
 * Response
@@ -299,7 +299,7 @@ Array of TEAMS objects
 
 * Request type/url
 ```
-GET  http://localhost:3020/teams/:id
+GET  https://boiling-brushlands-51072.herokuapp.com/teams/:id
 
 ```    
 * Response
