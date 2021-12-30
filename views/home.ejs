@@ -9,60 +9,62 @@
 </head>
 <header>
     <div class="header-container">
-        <h1>F1 Api Documentation</h1>
+        <h1 class="api">F1 Api Documentation</h1>
     </div>
 </header>
 <body>
     <main>
         <div class="response">
-             <h1>Endpoints</h1> <br>
+             <h1 class="main-title">Endpoints</h1> <br>
 
-             <h2>User authentication</h2>
-            
+             <h2 class="section-title">User authentication</h2>
              <% Object.entries(data.user).forEach(element => { %>
-                    <h3><%= data.user[element[0]].title %></h3>
+            <div class="req-wrapper">
+                    <h3 class="end-title"><%= data.user[element[0]].title %></h3>
 
-            <code><span class='method'><%= data.user[element[0]].method %></span>          <%= data.user[element[0]].url %> </code><br>
-            
-            <h4>REQUEST BODY</h4>
-            <code>
-                <span class="brackets">     {</span> <br>
-                    <% Object.entries(data.user[element[0]].body).forEach(el => { %>
-                        <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %> ></span><br>
+                    <code><span class='method'><%= data.user[element[0]].method %>  /  </span>          <%= data.user[element[0]].url %> </code><br>
+                    
+                    <h4 class="req-res">REQUEST BODY</h4>
+                    <code>
+                        <span class="brackets">     {</span> <br>
+                            <% Object.entries(data.user[element[0]].body).forEach(el => { %>
+                                <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %> </span><br>
+                            <% }) %>
+                            
+                        <span class='brackets'>     }</span>
+                    </code>   
+
+                    <h4 class="req-res">RESPONSE</h4>
+                    <code>
+                        <span class="brackets">     {</span> <br>
+                            <% Object.entries(data.user[element[0]].response).forEach(el => { %>
+                                <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %> ></span><br>
+                            <% }) %>
+                            
+                        <span class='brackets'>     }</span>
+                    </code>   
+            </div>  
                     <% }) %>
-                       
-                <span class='brackets'>     }</span>
-            </code>   
 
-            <h4>RESPONSE</h4>
-            <code>
-                <span class="brackets">     {</span> <br>
-                    <% Object.entries(data.user[element[0]].response).forEach(el => { %>
-                        <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %> ></span><br>
-                    <% }) %>
-                       
-                <span class='brackets'>     }</span>
-            </code>   
-             <% }) %>
-            
-
-             <h2>Formula 1 endpoints</h2>
+             <h2 class="section-title">Formula 1 endpoints</h2>
             
              <% Object.entries(data.formula).forEach(element => { %>
-                    <h3><%= data.formula[element[0]].title %></h3>
+            <div class="req-wrapper">
+                <h3 class="end-title"><%= data.formula[element[0]].title %></h3>
 
-            <code><span class='method'><%= data.formula[element[0]].method %></span>          <%= data.formula[element[0]].url %> </code><br>
-            
-            <h4>RESPONSE</h4>
-            <code>//<%=  data.formula[element[0]].comment  %> //</code><br>
-            <code>
-                <span class="brackets">     {</span> <br>
-                    <% Object.entries(data.formula[element[0]].response).forEach(el => { %>
-                        <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %></span><br>
-                    <% }) %>
-                       
-                <span class='brackets'>     }</span>
-            </code>   
+                <code><span class='method'><%= data.formula[element[0]].method %>  /  </span>          <%= data.formula[element[0]].url %> </code><br>
+                
+                <h4 class="req-res">RESPONSE</h4>
+                <code class="comment">//<%=  data.formula[element[0]].comment  %> //</code><br>
+                <code>
+                    <span class="brackets">     {</span> <br>
+                        <% Object.entries(data.formula[element[0]].response).forEach(el => { %>
+                            <span class='prop'><%= el[0] %> </span> : <span class='value'><%= el[1] %></span><br>
+                        <% }) %>
+                        
+                    <span class='brackets'>     }</span>
+                </code> 
+            </div>  
              <% }) %>
            
         </div>

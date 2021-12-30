@@ -171,6 +171,50 @@ const data = {
                 },
                 comment: "Driver information"
             },
+            teams: {
+                module: "f1",
+                title: "F1 TEAMS",
+                method: "GET",
+                url: "https://boiling-brushlands-51072.herokuapp.com/teams",
+                response: {
+                    "_id": "61cc2aa164e7999bae8c4b1885",
+                    "name": "Mercedes-AMG Petronas F1 Team",
+                    "base": "Brackley, UK",
+                    "teamChief": "Toto Wolf",
+                    "technicalChief": "Mike Elliott",
+                    "chasis": "W12",
+                    "powerUnit": "Mercedes",
+                    "firstTeamEntry": 1970,
+                    "championships": 8,
+                    "highestRaceFinnish": 1,
+                    "wins": 115,
+                    "poles": 127,
+                    "fastestLaps": 85
+                },
+                comment: "Array of F1 Teams Objects"
+            },
+            teamInfo: {
+                module: "f1",
+                title: "TEAM INFORMATION",
+                method: "GET",
+                url: "https://boiling-brushlands-51072.herokuapp.com/teams/:teamId",
+                response: {
+                    "_id": "61cc2aa164e7999bae8c4b1885",
+                    "name": "Mercedes-AMG Petronas F1 Team",
+                    "base": "Brackley, UK",
+                    "teamChief": "Toto Wolf",
+                    "technicalChief": "Mike Elliott",
+                    "chasis": "W12",
+                    "powerUnit": "Mercedes",
+                    "firstTeamEntry": 1970,
+                    "championships": 8,
+                    "highestRaceFinnish": 1,
+                    "wins": 115,
+                    "poles": 127,
+                    "fastestLaps": 85
+                },
+                comment: "Team information"
+            },
     }
             
 }
