@@ -1,6 +1,5 @@
 body {
     background: #1f1f27;
-    height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
@@ -20,24 +19,28 @@ main {
     align-items: center;
     justify-content: center;
 }
-.endpoints{
-    width: 40%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-style: solid;
-    border-width: .2rem;
-    border-radius: 1rem;
-    border-color: white;
-}
+
 .response{
-    width: 60%;
+    width: 80%;
+    padding: 15%;
     height: 100%;
-    display: flex;
     border-style: solid;
     border-width: .2rem;
     border-radius: 1rem;
     border-color: white;
+    color: yellow;
+}
+.method{
+    color: purple;
+}
+.brackets{
+    margin-left: 2rem;
+    color: aqua;
+}
+.prop{
+    margin-left: 4rem;
+    color: red;
+}
+.value{
+    color: yellow;
 }

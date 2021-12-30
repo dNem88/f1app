@@ -1,8 +1,8 @@
 const router = require('express').Router();
-
+const templateData = require('../models/home');
 router.get("/", async(req,res,next) => {
     res.status(200)
-    .render('home', {name: "dani", age: 33});
+    .render('home', {data: templateData});
 });
 
 module.exports = router;

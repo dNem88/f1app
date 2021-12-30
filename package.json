@@ -6,12 +6,13 @@
   "directories": {
     "test": "test"
   },
-  "engines" : {
+  "engines": {
     "node": "16.11.1",
     "npm": "8.1.0"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "devStart": "nodemon index.js"
   },
   "repository": {
     "type": "git",

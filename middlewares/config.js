@@ -16,7 +16,7 @@ module.exports = (app) => {
         origin: "*",
         allowedHeaders: ['Authorization', 'Content-type']
     }));
-    app.use('/static', express.static(`${root}/static`));
-    app.set('views', `${root}/views`);
     app.set('view engine', 'ejs');
+    // app.set('views', `${root}/views`);
+    app.use('/static', express.static(`${root}/static`));
 };
