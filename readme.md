@@ -15,6 +15,7 @@ F1 APP
 # Technologies
     - NodeJS / Express
     - Database: MongoDB (Atlas)
+    - Deployed on Heroku
 
 # Dependencies
     "axios": "^0.24.0",
@@ -134,7 +135,7 @@ GET  https://boiling-brushlands-51072.herokuapp.com/schedule/someId
 circuit information, date, location
 
 ```
-[
+
 {
     "_id": "someId",
     "season": "2022",
@@ -150,7 +151,7 @@ circuit information, date, location
     "date": "2022-04-10",
     "time": "05:10:00Z"
   }
-]
+
 ```
 
 ### DRIVERS CURRENT STANDINGS
