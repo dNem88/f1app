@@ -11,8 +11,8 @@
     "npm": "8.1.0"
   },
   "scripts": {
-    "start": "node server.js",
-    "devStart": "nodemon server.js",
+    "start": "node index.js",
+    "devStart": "nodemon index.js",
     "test": "jest"
   },
   "repository": {
