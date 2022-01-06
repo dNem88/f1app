@@ -11,8 +11,9 @@
     "npm": "8.1.0"
   },
   "scripts": {
-    "start": "node index.js",
-    "devStart": "nodemon index.js"
+    "start": "node server.js",
+    "devStart": "nodemon server.js",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -37,5 +38,12 @@
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^4.2.2",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "jest": "^27.4.5",
+    "superagent": "^6.1.0",
+    "supertest": "^6.1.6"
   }
 }

@@ -9,7 +9,7 @@ const User = require('../models/user');
 async function login(req,res,next) {
     const token = generateToken(req.session.user); /*add user as a jwt payload*/
     req.session.user.authToken = token;
-    res.status(200).json(req.session.user);
+    res.status(201).json(req.session.user);
 };
 async function register(req, res, next) {
     const {username, password, email} = req.body;
@@ -20,7 +20,7 @@ async function register(req, res, next) {
         if (encrypted) {
             try {
                 const user = await authData.registerUser(req, new User(username, encrypted, email));
-                res.status(200).json(user);
+                res.status(201).json(user);
             } catch (e) {
                 res.status(400).json({
                     error: {
@@ -41,7 +41,19 @@ async function logout(req, res, next) {
 
 
 function validateReg(req,res,next) {
-    const {username, password, confirmPassword, email} = req.body;
+    const {
+            username,
+            password,
+            confirmPassword,
+            email
+        } = req.body;
+   
+    
+    if (!username && !password && !confirmPassword && !email) {
+        return res.status(400).json({error: 
+            {message: "All fields are required!"}
+        });
+    }
     const isValidUsername =  validator.isAlphanumeric(username);
     const isSecurePassword = validator.isStrongPassword(password, {
         minLength: 8,
@@ -51,11 +63,7 @@ function validateReg(req,res,next) {
     });
     const isEmail = validator.isEmail(email);
     const areEqual = validator.equals(password, confirmPassword);
-    if (req.body === null || req.body === undefined || Object.values(req.body).includes('') || req.body === false) {
-        return res.status(204).json({error: {
-            message: "All fields are required!"
-        }});
-    }
+    
     if (!isValidUsername) {
         return res.status(400).json({error: {
             message: 'Username must contain only English letters and digits!'
@@ -79,7 +87,9 @@ function validateReg(req,res,next) {
 }
 async function validateLogin(req,res,next) {
     const {username, password} = req.body;
-    
+    if (username === undefined || password === undefined) {
+        return res.status(400).json({error: {message: "Invalid input!"}});
+    }
     const validUser = await authData.findUser(username, req); /*DB check for such user*/
     if (!validUser) {
         return res.status(400).json({error: {message: "No such user!"}});

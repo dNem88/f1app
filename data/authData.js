@@ -14,7 +14,7 @@ async function registerUser(req, credentials) {
             'username': username
         });
         if (user) {
-            throw {error: {message: 'Username already exist! Please create another one!'}}
+            return {error: {message: 'Username already exist! Please create another one!'}}
         }
     } catch(e) {
         return {error: {message: 'Username already exist! Please create another one!'}};
