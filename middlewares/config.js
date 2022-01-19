@@ -12,9 +12,9 @@ module.exports = (app) => {
     app.use(express.json());
     app.use(session());
     app.use(cors({
-        methods: ['GET', 'POST'],
-        origin: false,
-        allowedHeaders: ['Authorization', 'Content-type']
+        methods: "GET, POST,PUT,DELETE",
+        origin: '*',
+        preflightContinue: false
     }));
     app.set('view engine', 'ejs');
     // app.set('views', `${root}/views`);
