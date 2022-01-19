@@ -13,7 +13,7 @@ module.exports = (app) => {
     app.use(session());
     app.use(cors({
         methods: ['GET', 'POST'],
-        origin: "*",
+        origin: false,
         allowedHeaders: ['Authorization', 'Content-type']
     }));
     app.set('view engine', 'ejs');
