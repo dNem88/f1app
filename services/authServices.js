@@ -6,11 +6,29 @@ const jwt = require('jsonwebtoken');
 const User = require('../models/user');
 
 
-async function login(req,res,next) {
-    const token = generateToken(req.session.user); /*add user as a jwt payload*/
-    req.session.user.authToken = token;
-    res.status(201).json(req.session.user);
-};
+
+async function verifyLoggedInUser(req,res,next) {
+    try {
+        const [cookieName, value] = req.headers.cookie.split('=') || ['', '']
+        if (cookieName === 'f1-auth' && value.split('.').length === 3) {
+            /*TO DO => verify token, user etc*/
+            res.status(200).json({
+                isAuthorized: true,
+                token: value
+            })
+        } else {
+            res.status(200).json({
+                isAuthorized: false
+            });
+        }
+    } catch(e) {
+        res.status(200).json({
+            isAuthorized: false
+        });
+    }
+    
+    
+}
 async function register(req, res, next) {
     const {username, password, email} = req.body;
     bcrypt.hash(password, Number(salt), async(err, encrypted) => {
@@ -33,9 +51,7 @@ async function register(req, res, next) {
     });
 };
 async function logout(req, res, next) {
-    req.session.destroy((err) => {
-        return err;
-    });
+    res.clearCookie('f1-auth')
     res.status(200).json({message: 'You successfully logout'});
 };
 
@@ -94,16 +110,19 @@ async function validateLogin(req,res,next) {
     if (!validUser) {
         return res.status(400).json({error: {message: "No such user!"}});
     } 
-    req.session.user = {
-        _id: validUser._id,
-        username: validUser.username,
-        email: validUser.email
-    };
     const passMatch = await bcrypt.compare(password, validUser.password);
     if (!passMatch) {
         return res.status(400).json({error: {message: "Password doesn't match!"}});
     }
-    next();
+    let user = {
+        _id: validUser._id,
+        username: validUser.username,
+        email: validUser.email
+    };
+    const token =  generateToken(user);
+    user.authToken = token; 
+    res.cookie('f1-auth', token, {httpOnly: true, maxAge: 3600000});
+    res.status(201).json(user);
 }
 
 function generateToken(user) {
@@ -111,9 +130,9 @@ function generateToken(user) {
 }
 
 module.exports = {
-    login,
     register,
     logout,
     validateReg,
-    validateLogin
+    validateLogin,
+    verifyLoggedInUser
 };

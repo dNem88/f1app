@@ -4,7 +4,7 @@ const session = require('express-session');
 module.exports = function sessionSetup(req,res,next) {
     return session({
             saveUninitialized: true,
-            resave: false,
+            resave: true,
             secret: process.env.SECRET_KEY,
             name: process.env.COOKIE_NAME,
             store: mongoStore.create({
@@ -13,7 +13,7 @@ module.exports = function sessionSetup(req,res,next) {
             }),
             cookie: {
                 path: '/',
-                maxAge: 10800000,
+                maxAge: 3600000,
                 httpOnly: true,
             }
         });

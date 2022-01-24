@@ -2,7 +2,7 @@
 /architecture.txt
 /config/.env
 /http_requests.rest
+/middlewares/session.js
 /server.js
-/.jshintrc
-
+.jshintrc
 
