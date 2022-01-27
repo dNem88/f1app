@@ -16,8 +16,6 @@ module.exports = (app) => {
         credentials: true
     }));
     app.use(cookieParser(process.env.SECRET_KEY))
-    // app.use(session());
     app.set('view engine', 'ejs');
-    // app.set('views', `${root}/views`);
     app.use('/static', express.static(`${root}/static`));
 };

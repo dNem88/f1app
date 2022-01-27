@@ -11,10 +11,18 @@ async function verifyLoggedInUser(req,res,next) {
     try {
         const [cookieName, value] = req.headers.cookie.split('=') || ['', '']
         if (cookieName === 'f1-auth' && value.split('.').length === 3) {
-            /*TO DO => verify token, user etc*/
-            res.status(200).json({
-                isAuthorized: true,
-                token: value
+    
+            jwt.verify(value, process.env.SECRET_KEY, (err, valid) => {
+                if (err) {
+                    console.log(err)
+                    throw err
+                }
+                console.log(valid)
+                res.status(200).json({
+                    isAuthorized: true,
+                    token: value,
+                    user: valid
+                })
             })
         } else {
             res.status(200).json({
@@ -28,7 +36,7 @@ async function verifyLoggedInUser(req,res,next) {
     }
     
     
-}
+} /*Should be used only on browser refresh of the SPA*/
 async function register(req, res, next) {
     const {username, password, email} = req.body;
     bcrypt.hash(password, Number(salt), async(err, encrypted) => {
@@ -52,7 +60,7 @@ async function register(req, res, next) {
 };
 async function logout(req, res, next) {
     res.clearCookie('f1-auth')
-    res.status(200).json({message: 'You successfully logout'});
+    res.status(200).json({message: 'You successfully logout', logout: true});
 };
 
 
@@ -121,12 +129,13 @@ async function validateLogin(req,res,next) {
     };
     const token =  generateToken(user);
     user.authToken = token; 
+    console.log('hit')
     res.cookie('f1-auth', token, {httpOnly: true, maxAge: 3600000});
     res.status(201).json(user);
 }
 
 function generateToken(user) {
-    return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '3h'});
+    return jwt.sign(user, process.env.SECRET_KEY, {expiresIn: '1h'});
 }
 
 module.exports = {
