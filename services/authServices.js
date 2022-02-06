@@ -14,10 +14,9 @@ async function verifyLoggedInUser(req,res,next) {
     
             jwt.verify(value, process.env.SECRET_KEY, (err, valid) => {
                 if (err) {
-                    console.log(err)
+    
                     throw err
                 }
-                console.log(valid)
                 res.status(200).json({
                     isAuthorized: true,
                     token: value,

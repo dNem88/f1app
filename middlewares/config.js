@@ -10,7 +10,7 @@ module.exports = (app) => {
     }));
     app.use(express.json());
     app.use(cors({
-        methods: "GET, POST",
+        methods: "GET, POST, PUT",
         origin: 'http://localhost:3000',
         preflightContinue: true,
         credentials: true
