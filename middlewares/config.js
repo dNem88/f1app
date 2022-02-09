@@ -11,7 +11,7 @@ module.exports = (app) => {
     app.use(express.json());
     app.use(cors({
         methods: '["GET", "POST", "PUT"]',
-        origin: "['http://localhost:3000', 'https://dnem88.github.io/formula1spa']",
+        origin: "*",
         preflightContinue: true,
         credentials: true
     }));
