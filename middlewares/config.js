@@ -14,7 +14,8 @@ module.exports = (app) => {
         origin: "['http://localhost:3000', 'https://dnem88.github.io']",
         preflightContinue: true,
         allowedHeaders: "Content-Type, Authorization, X-Requested-With",
-        credentials: true
+        credentials: true,
+        optionsSuccessStatus: 200
     }));
     app.use(cookieParser(process.env.SECRET_KEY))
     app.set('view engine', 'ejs');
