@@ -13,6 +13,7 @@ module.exports = (app) => {
         methods: '["GET", "POST", "PUT"]',
         origin: "*",
         preflightContinue: true,
+        allowedHeaders: "Content-Type, Authorization, X-Requested-With",
         credentials: true
     }));
     app.use(cookieParser(process.env.SECRET_KEY))
