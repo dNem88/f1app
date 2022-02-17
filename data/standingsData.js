@@ -5,6 +5,7 @@ async function getDriversStandings(req,res,next) {
     try {
         const response = await axios.get(url);
         const data = (Object.values(response.data))[0].StandingsTable.StandingsLists[0];
+        console.log(data)
         return data;
     } catch (e) {
         return {

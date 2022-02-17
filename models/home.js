@@ -98,7 +98,7 @@ const data = {
                     module: "f1",
                     title: "DRIVERS STANDINGS",
                     method: "GET",
-                    url: "https://boiling-brushlands-51072.herokuapp.com/drivers/standings",
+                    url: "https://boiling-brushlands-51072.herokuapp.com/standings/drivers",
                     response: {
                         "position": "1",
                         "points": "395.5",
@@ -113,7 +113,7 @@ const data = {
                 module: "f1",
                 title: "CONSTRUCTORS STANDINGS",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/constructors/standings",
+                url: "https://boiling-brushlands-51072.herokuapp.com/standings/constructors",
                 response: {
                     "position": "1",
                     "points": "613.5",
