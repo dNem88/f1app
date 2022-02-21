@@ -129,7 +129,7 @@ async function validateLogin(req,res,next) {
     const token =  generateToken(user);
     user.authToken = token; 
     console.log('hit')
-    res.cookie('f1-auth', token, {httpOnly: true, maxAge: 3600000, sameSite: 'none'});
+    res.cookie('f1-auth', token, {httpOnly: true, maxAge: 3600000, sameSite: 'none', secure: true});
     res.status(201).json(user);
 }
 
