@@ -1,7 +1,7 @@
 {
   "name": "expressapp",
   "version": "1.0.0",
-  "description": "f1-express-app",
+  "description": "realestate",
   "main": "index.js",
   "directories": {
     "test": "test"
