@@ -17,15 +17,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/dNem88/f1app.git"
+    "url": "git+https://github.com/dNem88/realestate.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "Daniel Nemski",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dNem88/f1app/issues"
+    "url": "https://github.com/dNem88/realestate/issues"
   },
-  "homepage": "https://github.com/dNem88/f1app#readme",
+  "homepage": "https://github.com/dNem88/realestate",
   "dependencies": {
     "axios": "^0.24.0",
     "bcrypt": "^5.0.1",
