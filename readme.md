@@ -38,7 +38,7 @@ F1 APP
 
 * Request type/url
 ```
-POST  https://boiling-brushlands-51072.herokuapp.com/users/register
+POST  https://calm-puce-kitten-fez.cyclic.app//users/register
 
 body: { 
     username: 'user1',
@@ -59,7 +59,7 @@ body: {
 
 * Request type/url
 ```
-POST  https://boiling-brushlands-51072.herokuapp.com/users/login
+POST  https://calm-puce-kitten-fez.cyclic.app//users/login
 
 body: { 
     username: 'user1',
@@ -81,7 +81,7 @@ in 'Authorization' HTTP Request-header"}
 
 * Request type/url
 ```
-POST  https://boiling-brushlands-51072.herokuapp.com/users/logout
+POST  https://calm-puce-kitten-fez.cyclic.app//users/logout
 
 body: {},  Body is not required
 ```    

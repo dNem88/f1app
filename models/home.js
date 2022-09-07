@@ -4,7 +4,7 @@ const data = {
             module: "USER AUTHENTICATION",
             title: "REGISTER USER",
             method: "POST",
-            url: "https://boiling-brushlands-51072.herokuapp.com/users/register",
+            url: "https://calm-puce-kitten-fez.cyclic.app//users/register",
             body: {
                 username: 'user1',
                 password: 'User458712',
@@ -20,7 +20,7 @@ const data = {
             module: "USER AUTHENTICATION",
             title: "LOGIN USER",
             method: "POST",
-            url: "https://boiling-brushlands-51072.herokuapp.com/users/login",
+            url: "https://calm-puce-kitten-fez.cyclic.app//users/login",
             body: {
                 username: 'user1',
                 password: 'User458712',
@@ -35,7 +35,7 @@ const data = {
             module: "USER AUTHENTICATION",
             title: "LOGOUT USER",
             method: "POST",
-            url: "https://boiling-brushlands-51072.herokuapp.com/users/logout",
+            url: "https://calm-puce-kitten-fez.cyclic.app//users/logout",
             body: {
                
             },
@@ -49,7 +49,7 @@ const data = {
                 module: "f1",
                 title: "RACE SCHEDULE",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/schedule",
+                url: "https://calm-puce-kitten-fez.cyclic.app//schedule",
                 response: {
                     "_id": "someId",
                     season: "2022",
@@ -71,7 +71,7 @@ const data = {
                 module: "f1",
                 title: "CIRCUIT DATA",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/schedule/:circuitId",
+                url: "https://calm-puce-kitten-fez.cyclic.app//schedule/:circuitId",
                 response: {
                     "_id": "61bf42fffeab6a926247b6d8",
                     "season": "2022",
@@ -98,7 +98,7 @@ const data = {
                     module: "f1",
                     title: "DRIVERS STANDINGS",
                     method: "GET",
-                    url: "https://boiling-brushlands-51072.herokuapp.com/standings/drivers",
+                    url: "https://calm-puce-kitten-fez.cyclic.app//standings/drivers",
                     response: {
                         "position": "1",
                         "points": "395.5",
@@ -113,7 +113,7 @@ const data = {
                 module: "f1",
                 title: "CONSTRUCTORS STANDINGS",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/standings/constructors",
+                url: "https://calm-puce-kitten-fez.cyclic.app//standings/constructors",
                 response: {
                     "position": "1",
                     "points": "613.5",
@@ -127,7 +127,7 @@ const data = {
                 module: "f1",
                 title: "F1 DRIVERS",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/drivers",
+                url: "https://calm-puce-kitten-fez.cyclic.app//drivers",
                 response: {
                     "_id": "61cafa96e22e8aad9c021a3808",
                     "permanentNumber": "11",
@@ -151,7 +151,7 @@ const data = {
                 module: "f1",
                 title: "DRIVER INFORMATION",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/drivers/:driverId",
+                url: "https://calm-puce-kitten-fez.cyclic.app//drivers/:driverId",
                 response: {
                     "_id": "61cafa96e22e8aad9c021a3808",
                     "permanentNumber": "11",
@@ -175,7 +175,7 @@ const data = {
                 module: "f1",
                 title: "F1 TEAMS",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/teams",
+                url: "https://calm-puce-kitten-fez.cyclic.app//teams",
                 response: {
                     "_id": "61cc2aa164e7999bae8c4b1885",
                     "name": "Mercedes-AMG Petronas F1 Team",
@@ -197,7 +197,7 @@ const data = {
                 module: "f1",
                 title: "TEAM INFORMATION",
                 method: "GET",
-                url: "https://boiling-brushlands-51072.herokuapp.com/teams/:teamId",
+                url: "https://calm-puce-kitten-fez.cyclic.app//teams/:teamId",
                 response: {
                     "_id": "61cc2aa164e7999bae8c4b1885",
                     "name": "Mercedes-AMG Petronas F1 Team",
