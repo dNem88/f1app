@@ -14,6 +14,7 @@ module.exports = (app) => {
             console.log('Connected to MongoDB Atlas');
             app.locals.client = db;
             /*Keep a reference to the database in app.locals*/
+            app.listen(process.env.PORT || 3020, console.log(`Server listens on port ${3020}`));
         }
     });
 };
